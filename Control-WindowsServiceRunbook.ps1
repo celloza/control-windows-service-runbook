@@ -9,6 +9,15 @@
   the provided timespan. If waiting for the state times out, an exception is thrown which can control the flow (as it was originally intended)
   in a LogicApp.
 
+.OUTPUTS
+  The output is formatted as JSON for easy consumption in a LogicApp. Sample output is provided below:
+
+  {
+	"success": true,
+	"message": "Service started successfully.",
+	"errorCode": 0
+  }
+
   Exit codes are as follows:
 
   0 - The script executed succesfully.
@@ -17,14 +26,6 @@
   3 - A timeout occurred while trying to perform the operation.
   4 - No or multiple services found using the provided name.
   99 - Unhandled exception.
-
-  The output is formatted as JSON for easy consumption in a LogicApp. Sample output is provided below:
-
-  {
-	"success": true,
-	"message": "Service started successfully.",
-	"errorCode": 0
-  }
 
   To see verbose output, make sure to set the 'Log verbose records' in your Azure Runbook (under Logging and Tracing) to 'On'.
 
