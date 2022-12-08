@@ -108,7 +108,7 @@ $service = Get-Service $ServiceName -ErrorAction SilentlyContinue
 
 if($service.Length -gt 1)
 {
-	$errorMessage = "The service did not start within the specified timeout of $timeOutSeconds seconds."
+	$errorMessage = "Found more than one service with the supplied ServiceName parameter."
 	ProvideResponse -OutputMessage $errorMessage -ErrorCode 4
 	Write-Error $errorMessage -ErrorAction Continue 
 	throw $errorMessage
